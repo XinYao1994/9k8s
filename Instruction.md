@@ -7,6 +7,10 @@ https://github.com/kubernetes/dashboard/wiki/Creating-sample-user
 
 kubeadm init --apiserver-advertise-address=10.1.2.64 --pod-network-cidr=10.244.0.0/16  --service-cidr=10.244.0.0/12
 
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
 kubeadm join 10.1.2.64:6443 --token a3nmda.geffwqt6nyx7uwye --discovery-token-ca-cert-hash sha256:7a570682ee50a82fa83b9d2fb9eb9963ff39d0e2321d682a074c8d5fcd4545af
 
 kubectl config set-context ddl --namespace=kube-ddl --cluster=kubernetes --user=kubernetes-admin
@@ -94,6 +98,8 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 
 kubectl config set-context ddl --namespace=kube-ddl --cluster=kubernetes --user=kubernetes-admin
+
+kubectl config use-context xywu
 
 kubectl exec -it shell-demo -- /bin/bash
 

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: cni-cleanup
+  labels:
+    k8s-app: cni-cleanup
+spec:
+  selector:
+    matchLabels:
+      beta.kubernetes.io/os: linux
+  template:
+    metadata:
+      labels:
+        beta.kubernetes.io/os: linux
+    spec:
+      containers:
+      - name: cni-cleanup
+        image: hectorj2f/cni_cleanup:latest
+        volumeMounts:
+          - name: varcni
+            mountPath: /var/lib/cni/networks/kube-cni
+          - name: varrundocker
+            mountPath: /var/run/docker.sock
+        env:
+          - name: CNI_PATH
+            value: "/var/lib/cni/networks/kube-cni"
+      volumes:
+      - name: varcni
+        hostPath:
+          path: /var/lib/cni/networks/kube-cni
+      - name: varrundocker
+        hostPath:
+          path: /var/run/docker.sock

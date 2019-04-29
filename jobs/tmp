@@ -1,0 +1,216 @@
+Name:               ddl-777686cb59-4wrqm
+Namespace:          kube-ddl
+Priority:           0
+PriorityClassName:  <none>
+Node:               se029/10.1.2.29
+Start Time:         Sat, 27 Apr 2019 05:21:29 +0000
+Labels:             app=ddl
+                    pod-template-hash=777686cb59
+Annotations:        <none>
+Status:             Pending
+IP:                 10.244.29.3
+Controlled By:      ReplicaSet/ddl-777686cb59
+Containers:
+  ubuntu-ddl:
+    Container ID:  
+    Image:         xinyao1994/ubuntu-ddl:v.1.1.0
+    Image ID:      
+    Ports:         22/TCP, 80/TCP, 8000/TCP
+    Host Ports:    0/TCP, 0/TCP, 0/TCP
+    Command:
+      /bin/bash
+      -ce
+      tail -f /dev/null
+    State:          Waiting
+      Reason:       ErrImagePull
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-wxnbd (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  default-token-wxnbd:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-wxnbd
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  3m26s                 default-scheduler  Successfully assigned kube-ddl/ddl-777686cb59-4wrqm to se029
+  Normal   Pulling    112s (x4 over 3m24s)  kubelet, se029     Pulling image "xinyao1994/ubuntu-ddl:v.1.1.0"
+  Warning  Failed     109s (x4 over 3m22s)  kubelet, se029     Failed to pull image "xinyao1994/ubuntu-ddl:v.1.1.0": rpc error: code = Unknown desc = Error response from daemon: pull access denied for xinyao1994/ubuntu-ddl, repository does not exist or may require 'docker login'
+  Warning  Failed     109s (x4 over 3m22s)  kubelet, se029     Error: ErrImagePull
+  Warning  Failed     96s (x6 over 3m21s)   kubelet, se029     Error: ImagePullBackOff
+  Normal   BackOff    81s (x7 over 3m21s)   kubelet, se029     Back-off pulling image "xinyao1994/ubuntu-ddl:v.1.1.0"
+
+
+Name:               ddl-777686cb59-8qkl7
+Namespace:          kube-ddl
+Priority:           0
+PriorityClassName:  <none>
+Node:               se009/10.1.2.9
+Start Time:         Sat, 27 Apr 2019 05:13:58 +0000
+Labels:             app=ddl
+                    pod-template-hash=777686cb59
+Annotations:        <none>
+Status:             Running
+IP:                 10.244.9.5
+Controlled By:      ReplicaSet/ddl-777686cb59
+Containers:
+  ubuntu-ddl:
+    Container ID:  docker://cb763535cc29792ce0bd080574040aabc324f8232ab11aad3ab6f8f373418553
+    Image:         xinyao1994/ubuntu-ddl:v.1.1.0
+    Image ID:      docker-pullable://xinyao1994/ubuntu-ddl@sha256:c94f305c90dd6b051872880c980be00ef4ca7628779f5547226bc2d7d389ed2d
+    Ports:         22/TCP, 80/TCP, 8000/TCP
+    Host Ports:    0/TCP, 0/TCP, 0/TCP
+    Command:
+      /bin/bash
+      -ce
+      tail -f /dev/null
+    State:          Running
+      Started:      Sat, 27 Apr 2019 05:14:00 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-wxnbd (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-wxnbd:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-wxnbd
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  10m   default-scheduler  Successfully assigned kube-ddl/ddl-777686cb59-8qkl7 to se009
+  Normal  Pulled     10m   kubelet, se009     Container image "xinyao1994/ubuntu-ddl:v.1.1.0" already present on machine
+  Normal  Created    10m   kubelet, se009     Created container ubuntu-ddl
+  Normal  Started    10m   kubelet, se009     Started container ubuntu-ddl
+
+
+Name:               ddl-777686cb59-9f2jm
+Namespace:          kube-ddl
+Priority:           0
+PriorityClassName:  <none>
+Node:               se002/10.1.2.2
+Start Time:         Sat, 27 Apr 2019 05:13:58 +0000
+Labels:             app=ddl
+                    pod-template-hash=777686cb59
+Annotations:        <none>
+Status:             Running
+IP:                 10.244.2.6
+Controlled By:      ReplicaSet/ddl-777686cb59
+Containers:
+  ubuntu-ddl:
+    Container ID:  docker://c0fac4edb25cba58a17ae550ad74bd16a58757d14c1f10b68cc5851ac6ee5caf
+    Image:         xinyao1994/ubuntu-ddl:v.1.1.0
+    Image ID:      docker-pullable://xinyao1994/ubuntu-ddl@sha256:c94f305c90dd6b051872880c980be00ef4ca7628779f5547226bc2d7d389ed2d
+    Ports:         22/TCP, 80/TCP, 8000/TCP
+    Host Ports:    0/TCP, 0/TCP, 0/TCP
+    Command:
+      /bin/bash
+      -ce
+      tail -f /dev/null
+    State:          Running
+      Started:      Sat, 27 Apr 2019 05:14:00 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-wxnbd (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-wxnbd:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-wxnbd
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  10m   default-scheduler  Successfully assigned kube-ddl/ddl-777686cb59-9f2jm to se002
+  Normal  Pulled     10m   kubelet, se002     Container image "xinyao1994/ubuntu-ddl:v.1.1.0" already present on machine
+  Normal  Created    10m   kubelet, se002     Created container ubuntu-ddl
+  Normal  Started    10m   kubelet, se002     Started container ubuntu-ddl
+
+
+Name:               ddl-777686cb59-td8g2
+Namespace:          kube-ddl
+Priority:           0
+PriorityClassName:  <none>
+Node:               se005/10.1.2.5
+Start Time:         Sat, 27 Apr 2019 05:13:58 +0000
+Labels:             app=ddl
+                    pod-template-hash=777686cb59
+Annotations:        <none>
+Status:             Running
+IP:                 10.244.5.7
+Controlled By:      ReplicaSet/ddl-777686cb59
+Containers:
+  ubuntu-ddl:
+    Container ID:  docker://97dabde4bf00f70fa365900c47a055af1a0af51c8d7bf8e1085f8c09d5512de8
+    Image:         xinyao1994/ubuntu-ddl:v.1.1.0
+    Image ID:      docker-pullable://xinyao1994/ubuntu-ddl@sha256:c94f305c90dd6b051872880c980be00ef4ca7628779f5547226bc2d7d389ed2d
+    Ports:         22/TCP, 80/TCP, 8000/TCP
+    Host Ports:    0/TCP, 0/TCP, 0/TCP
+    Command:
+      /bin/bash
+      -ce
+      tail -f /dev/null
+    State:          Running
+      Started:      Sat, 27 Apr 2019 05:14:00 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-wxnbd (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-wxnbd:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-wxnbd
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  10m   default-scheduler  Successfully assigned kube-ddl/ddl-777686cb59-td8g2 to se005
+  Normal  Pulled     10m   kubelet, se005     Container image "xinyao1994/ubuntu-ddl:v.1.1.0" already present on machine
+  Normal  Created    10m   kubelet, se005     Created container ubuntu-ddl
+  Normal  Started    10m   kubelet, se005     Started container ubuntu-ddl

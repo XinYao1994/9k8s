@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu
+spec:
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+  containers:
+  - name: ubuntu
+    image: xinyao1994/ubuntu-ddl:v.1.0.0 #ubuntu:bionic
+    volumeMounts:
+    - name: shared-data
+      mountPath: /usr/share/nginx/html
+    ports:
+      - containerPort: 22 # here is
+  imagePullSecrets:
+    - name: dockerregistrykey

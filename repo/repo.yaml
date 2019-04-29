@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: repo
+spec:
+  containers:
+  - name: repo
+    image: library/registry
+    ports:
+    - containerPort: 5000

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ddl
+  labels:
+    app: ddl
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: ddl
+  template:
+    metadata:
+      labels:
+        app: ddl
+    spec:
+      containers:
+      - name: ubuntu-ddl
+        image: xinyao1994/ubuntu-ddl:v.1.1.2
+        command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
+        ports:
+        - containerPort: 22
+        - containerPort: 80
+        - containerPort: 8000
+      imagePullSecrets:
+        - name: dockerregistrykey

@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: dashboard-weblogic-ingress
+  namespace: kube-system
+spec:
+  rules:
+  - host: se064
+    http:
+      paths:
+      - path: /k8s
+        backend:
+          serviceName: ingress-dashboard
+          servicePort: 10864
+      - path: /
+        backend:
+          serviceName: kubernetes-dashboard
+          servicePort: 8001

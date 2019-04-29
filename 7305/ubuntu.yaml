@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spark
+  labels:
+    app: spark
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: spark
+  template:
+    metadata:
+      labels:
+        app: spark
+    spec:
+      containers:
+      - name: spark
+        image: rastasheep/ubuntu-sshd:18.04
+        command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
+        ports:
+        - containerPort: 22

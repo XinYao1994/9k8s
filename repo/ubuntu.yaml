@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: ubuntu
-    image: 10.244.55.4:5000/ubuntu-ddl:v.1.1.2
+    image: 10.247.89.29:5000/ubuntu:18.04
     command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
     ports:
     - containerPort: 22

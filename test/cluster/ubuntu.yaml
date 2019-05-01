@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu
+spec:
+  nodeSelector: 
+    kubernetes.io/hostname: se017
+  containers:
+  - name: ubuntu
+    image: 10.247.89.29:5000/ubuntu:18.04
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+    ports:
+    - containerPort: 22
+    volumeMounts:
+    - mountPath: /bin
+      name: cluster-storage-bin
+    - mountPath: /etc
+      name: cluster-storage-etc
+    - mountPath: /home
+      name: cluster-storage-home
+    - mountPath: /media
+      name: cluster-storage-media
+    - mountPath: /opt
+      name: cluster-storage-opt
+    - mountPath: /root
+      name: cluster-storage-root
+    - mountPath: /sbin
+      name: cluster-storage-sbin
+    - mountPath: /srv
+      name: cluster-storage-srv
+    - mountPath: /tmp
+      name: cluster-storage-tmp
+    - mountPath: /usr
+      name: cluster-storage-usr
+    - mountPath: /var
+      name: cluster-storage-var
+  volumes:
+  - name: cluster-storage-bin
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/bin
+  - name: cluster-storage-etc
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/etc
+  - name: cluster-storage-home
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/home
+  - name: cluster-storage-media
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/media
+  - name: cluster-storage-opt
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/opt
+  - name: cluster-storage-root
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/root
+  - name: cluster-storage-sbin
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/sbin
+  - name: cluster-storage-srv
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/srv
+  - name: cluster-storage-tmp
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/tmp
+  - name: cluster-storage-usr
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/usr
+  - name: cluster-storage-var
+    hostPath:
+      path: /localfs/xyao/k8s/cluster/data/var

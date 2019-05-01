@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu
+spec:
+  nodeSelector: 
+    kubernetes.io/hostname: se017
+  containers:
+  - name: ubuntu
+    image: 10.247.89.29:5000/ubuntu:18.04
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+    ports:
+    - containerPort: 22

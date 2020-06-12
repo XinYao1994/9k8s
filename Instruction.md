@@ -162,5 +162,5 @@ sudo docker run -d -p 5000:5000 -v /opt/data/registry:/var/lib/registry --name r
 
 kubeadm token create --print-join-command
 ```
-
+[SSL Problem](https://blog.csdn.net/xunzaosiyecao/article/details/71190814)
 
